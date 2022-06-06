@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.pipedreamer">
+    package="com.example.pd">
 
     <application
         android:allowBackup="true"
@@ -11,8 +11,60 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PipeDreamer"
+        android:theme="@style/Theme.PD"
         tools:targetApi="31">
+        <activity
+            android:name=".Travel"
+            android:exported="false"
+            android:label="Travel"
+            android:parentActivityName=".CategoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".Sports"
+            android:exported="false"
+            android:label="Sports"
+            android:parentActivityName=".CategoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".Fashion"
+            android:exported="false"
+            android:label="Fashion"
+            android:parentActivityName=".CategoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.CategoryActivity" />
+        </activity>
+        <activity
+            android:name=".Cuisine"
+            android:exported="false"
+            android:label="Cuisine"
+            android:parentActivityName=".CategoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.CategoryActivity" />
+        </activity>/>
+        <activity
+            android:name=".CategoryActivity"
+            android:exported="false"
+            android:label="Category"
+            android:parentActivityName=".DreamsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.DreamsActivity" />
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DreamsActivity"
+            android:exported="false"
+            android:label="Dream List" />
         <activity
             android:name=".CalendarActivity"
             android:exported="false" />
