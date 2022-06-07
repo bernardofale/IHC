@@ -10,15 +10,17 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="89dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="600dp"
         android:clickable="true"
+        android:onClick="addDream"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/flFragment"
         app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        android:onClick="addDream"/>
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <FrameLayout
         android:id="@+id/flFragment"

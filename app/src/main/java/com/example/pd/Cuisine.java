@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -42,6 +43,7 @@ public class Cuisine extends AppCompatActivity {
     }
 
     public void done(View view) {
+        Toast.makeText(this, "You've added experiences to your list!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, DreamsActivity.class);
         Bundle extras = new Bundle();
         for(String i: extra.keySet()){

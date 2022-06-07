@@ -48,7 +48,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.pd.CategoryActivity" />
-        </activity>/>
+        </activity>
         <activity
             android:name=".CategoryActivity"
             android:exported="false"
@@ -67,7 +67,13 @@
             android:label="Dream List" />
         <activity
             android:name=".CalendarActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Calendar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.pd.MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

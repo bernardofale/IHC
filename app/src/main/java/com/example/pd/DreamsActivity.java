@@ -21,7 +21,7 @@ public class DreamsActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private RecyclerView mRecyclerView;
     private ListAdapter mAdapter;
-    private LinkedList<String> dreamList = new LinkedList<>();
+    private static LinkedList<String> dreamList = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,12 @@ public class DreamsActivity extends AppCompatActivity {
                 return true;
             }
         });
+        if (savedInstanceState != null){
+            for (String key : savedInstanceState.keySet()) {
+                String dream = savedInstanceState.getString(key);
+                dreamList.add(dream);
+            }
+        }
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             for (String key : extras.keySet()) {
@@ -68,10 +74,19 @@ public class DreamsActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         // Give the RecyclerView a default layout manager.
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     public void addDream(View view) {
         Intent intent = new Intent(DreamsActivity.this, CategoryActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+        for (String i : dreamList) {
+            outState.putString(i, i);
+        }
+        super.onSaveInstanceState(outState);
     }
 }
