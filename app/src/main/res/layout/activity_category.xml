@@ -5,7 +5,7 @@
     android:id="@+id/layoutt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoryActivity">
+    tools:context="com.example.pd.CategoryActivity">
 
     <ImageView
         android:id="@+id/sports"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.871"
-        app:srcCompat="@drawable/_60_f_326771205_9vwwoe2c4lobu4iqvlfe2lfoufz7ugxu" />
+        app:srcCompat="@drawable/girl2" />
 
     <ImageView
         android:id="@+id/travel"
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53"
-        app:srcCompat="@drawable/ftap3pcxeaao23o" />
+        app:srcCompat="@drawable/girl" />
 
     <ImageView
         android:id="@+id/cuisine"

@@ -7,13 +7,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pipedreamer.R;
 
 import java.util.ArrayList;
 
-public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>º
+public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
 {
-    <public CalendarAdapter(ArrayList<String> daysOfMonth, OnItemListener onItemListener) {
+    public CalendarAdapter(ArrayList<String> daysOfMonth, OnItemListener onItemListener) {
         this.daysOfMonth = daysOfMonth;
         this.onItemListener = onItemListener;
     }
@@ -46,7 +45,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>º
 
     public interface OnItemListener
     {
-        void onItemClick(int position, String dayText)
+        void onItemClick(int position, String dayText);
     }
 
 

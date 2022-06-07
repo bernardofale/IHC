@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cuisine">
+    tools:context="com.example.pd.Cuisine">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825"
-        app:srcCompat="@drawable/_55eb04430f05bf153950a85008a72a8" />
+        app:srcCompat="@drawable/cuisine2" />
 
     <CheckBox
         android:id="@+id/brunchBox"

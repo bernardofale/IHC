@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,7 +31,7 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
-        initwidgets();
+        initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
 
@@ -83,7 +82,7 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
         YearMonth yearMonth = YearMonth.from(date);
         int daysInMonth = yearMonth.lengthOfMonth();
 
-        localDate firstOfMonth = selectedDate.withDayofMonth();
+        LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         for (int i = 1;  i <= 42; i++)
@@ -94,7 +93,7 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
             }
             else
             {
-                daysInMonthArray.add(String.valueOf((i - dayofweek)));
+                daysInMonthArray.add(String.valueOf((i - dayOfWeek)));
             }
         }
         return daysInMonthArray;
@@ -103,11 +102,11 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
     @RequiresApi(api = Build.VERSION_CODES.O)
     private String monthYearFromDate(LocalDate date)
     {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMMM YYYY");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
 
-    private void initwidgets()
+    private void initWidgets()
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
@@ -130,10 +129,6 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onItemClick(int position, String dayText) {
-        if(dayText.equals(""))
-        {
-            String message = "Selected date " + dayText + " " + monthYearFromDate(selectedDate);
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        }
+
     }
 }

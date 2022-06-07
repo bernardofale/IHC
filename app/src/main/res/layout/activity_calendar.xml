@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CalendarActivity">
+    tools:context="com.example.pd.CalendarActivity">
 
     <LinearLayout
         android:id="@+id/flFragment"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/back"
-            android:textColor="@color/blue"
+            android:textColor="@color/white"
             android:background="@null"
             android:textStyle="bold"
             android:onClick="previousMonthAction"
@@ -31,7 +31,7 @@
             />
 
         <TextView
-            android:id="@id/monthYearTV"
+            android:id="@+id/monthYearTV"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/forward"
-            android:textColor="@color/blue"
+            android:textColor="@color/white"
             android:background="@null"
             android:textStyle="bold"
             android:onClick="nextMonthAction"
@@ -63,7 +63,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SUN"
+            android:text="@string/sun"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -72,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="MON"
+            android:text="@string/mon"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -81,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TUE"
+            android:text="@string/tue"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -90,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="WED"
+            android:text="@string/wed"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -99,7 +99,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="THU"
+            android:text="@string/thu"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -108,7 +108,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="FRI"
+            android:text="@string/fri"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
@@ -117,16 +117,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SAT"
+            android:text="@string/sat"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@id/calendarRecyclerView"
+        android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
