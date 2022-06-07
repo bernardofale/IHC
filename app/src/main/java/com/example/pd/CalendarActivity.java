@@ -26,6 +26,7 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
     BottomNavigationView bottomNavigationView;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +83,7 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
         YearMonth yearMonth = YearMonth.from(date);
         int daysInMonth = yearMonth.lengthOfMonth();
 
-        localate firstOfMonth = selectedDate.withDayofMonth();
+        localDate firstOfMonth = selectedDate.withDayofMonth();
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
         for (int i = 1;  i <= 42; i++)
