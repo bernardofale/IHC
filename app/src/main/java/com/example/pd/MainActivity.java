@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -45,4 +46,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void experienceDetails(View view) {
+        Intent intent = new Intent(MainActivity.this, ExperienceDetails.class);
+        startActivity(intent);
+    }
+
 }
