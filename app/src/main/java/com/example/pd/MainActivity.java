@@ -2,7 +2,6 @@ package com.example.pd;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void experienceDetails(View view) {
-        Intent intent = new Intent(MainActivity.this, ExperienceDetails.class);
+        Intent intent = new Intent(MainActivity.this, ExperienceDetailsActivity.class);
         startActivity(intent);
     }
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -41,5 +42,10 @@ public class ProfileActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void settings(View view) {
+        Intent intent = new Intent(ProfileActivity.this, Settings.class);
+        startActivity(intent);
     }
 }

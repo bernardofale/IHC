@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Social Accounts">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="Instagram"
+            android:title="Instagram" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="Pinterest"
+            android:title="Pinterest" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="Twitter"
+            android:title="Twitter" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="Facebook"
+            android:title="Facebook" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Profile Information">
+
+        <EditTextPreference
+            android:defaultValue="example@gmail.com"
+            android:key="Email"
+            android:title="Email"
+            android:summary="Change your email"/>
+
+        <EditTextPreference
+            android:defaultValue="example_user"
+            android:key="Username"
+            android:title="Username"
+            android:summary="Change your username"/>
+
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

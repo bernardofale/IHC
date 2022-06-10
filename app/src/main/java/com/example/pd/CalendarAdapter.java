@@ -1,5 +1,6 @@
 package com.example.pd;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +13,15 @@ import java.util.ArrayList;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
 {
-    public CalendarAdapter(ArrayList<String> daysOfMonth, OnItemListener onItemListener) {
+    public CalendarAdapter(ArrayList<String> daysOfMonth, OnItemListener onItemListener, Bundle extras) {
         this.daysOfMonth = daysOfMonth;
         this.onItemListener = onItemListener;
+        this.activities = extras;
     }
 
     private final ArrayList<String> daysOfMonth;
     private final OnItemListener onItemListener;
+    private final Bundle activities;
 
     @NonNull
     @Override
@@ -34,7 +37,15 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
     @Override
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position)
     {
+        if (activities != null) {
+            if (daysOfMonth.get(position).equals(Integer.toString(activities.getInt("day")))) {
+                holder.dayOfMonth.setText(daysOfMonth.get(position) + "\n" + this.activities.get("name"));
+            } else {
+                holder.dayOfMonth.setText(daysOfMonth.get(position));
+            }
+        } else {
         holder.dayOfMonth.setText(daysOfMonth.get(position));
+        }
     }
 
     @Override

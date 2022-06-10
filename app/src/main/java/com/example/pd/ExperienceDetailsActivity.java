@@ -2,20 +2,31 @@ package com.example.pd;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
-public class ExperienceDetails extends AppCompatActivity {
+public class ExperienceDetailsActivity extends AppCompatActivity {
+
+    HashMap<String,String> extra = new HashMap<String, String>();
+    private static final String TAG = "MyActivity";
+    private static String activityName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experience_details);
+        this.activityName = ((TextView) findViewById(R.id.textView26)).getText().toString();
     }
 
     public static class DatePickerFragment extends DialogFragment
@@ -34,15 +45,21 @@ public class ExperienceDetails extends AppCompatActivity {
         }
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
-            // Do something with the date chosen by the user
+            Bundle extras = new Bundle();
+            extras.putInt("day",day);
+            extras.putInt("month",month);
+            extras.putInt("year",year);
+            extras.putString("name", activityName);
+            Intent intent = new Intent(getActivity(),CalendarActivity.class);
+            intent.putExtras(extras);
+            startActivity(intent);
         }
     }
 
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+
     }
-
-
 
 }

@@ -19,18 +19,21 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class CalendarActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener {
+    private static LinkedList<String> activityList = new LinkedList<>();
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    private Bundle bundle;
     BottomNavigationView bottomNavigationView;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
-
+        this.bundle = savedInstanceState;
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
@@ -67,11 +70,17 @@ public class CalendarActivity extends AppCompatActivity implements CalendarAdapt
     private void setMonthView() {
         monthYearText.setText(monthYearFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
-
-        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth,this);
+        Bundle aux = null;
+        if (getIntent().getExtras() != null){
+            LocalDate activityDate = LocalDate.of(getIntent().getExtras().getInt("year"),getIntent().getExtras().getInt("month") + 1,getIntent().getExtras().getInt("day"));
+            if (activityDate.getMonth().equals(selectedDate.getMonth()) && activityDate.getYear() ==selectedDate.getYear()){
+                aux = getIntent().getExtras();
+            }
+        }
+        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth,this,aux);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
-        calendarRecyclerView.setAdapter((calendarAdapter));
+        calendarRecyclerView.setAdapter(calendarAdapter);
 
     }
 
