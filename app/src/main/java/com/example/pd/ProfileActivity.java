@@ -5,13 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    ProgressBar bar;
+    TextView percentage;
+    TextView lilText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +49,26 @@ public class ProfileActivity extends AppCompatActivity {
                 return true;
             }
         });
+        int num;
+        Bundle extras = getIntent().getExtras();
+        if (extras == null){
+            num = 0;
+        }else{
+            num = extras.getInt("dreamsDone");
+        }
+        Log.d("dreamsDone", Integer.toString(num));
+
+        bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar.setProgress(num);
+        percentage = (TextView) findViewById(R.id.textView34);
+        lilText = (TextView) findViewById(R.id.textView35);
+        if (num == 0){
+            percentage.setText("0%");
+        }else{
+            int perc = 100/num;
+            percentage.setText(Integer.toString(perc)+"%");
+            lilText.setText(perc+"% of your dreams are complete");
+        }
     }
 
     public void settings(View view) {

@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Random;
 import java.util.Set;
 
 public class DreamsActivity extends AppCompatActivity {
@@ -22,6 +25,8 @@ public class DreamsActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ListAdapter mAdapter;
     private static LinkedList<String> dreamList = new LinkedList<>();
+    private static ArrayList<Integer> dreamsDone = new ArrayList<>();
+    //Intent tent = new Intent(this, ProfileActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,7 @@ public class DreamsActivity extends AppCompatActivity {
                         return true;
                     case R.id.profile:
                         Intent intent4 = new Intent(DreamsActivity.this, ProfileActivity.class);
+                        intent4.putExtra("dreamsDone", dreamsDone.size());
                         startActivity(intent4);
                         return true;
                 }
@@ -88,5 +94,9 @@ public class DreamsActivity extends AppCompatActivity {
             outState.putString(i, i);
         }
         super.onSaveInstanceState(outState);
+    }
+
+    public void check(View view) {
+        dreamsDone.add(1);
     }
 }
