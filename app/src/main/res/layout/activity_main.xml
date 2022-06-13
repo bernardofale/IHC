@@ -911,7 +911,7 @@
         android:layout_width="277dp"
         android:layout_height="64dp"
         android:fontFamily="sans-serif-black"
-        android:text="Keep dreaming..."
+        android:text="Keep dreaming!"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

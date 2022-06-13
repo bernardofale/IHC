@@ -54,6 +54,17 @@ public class ExperienceDetailsActivity extends AppCompatActivity {
             intent.putExtras(extras);
             startActivity(intent);
         }
+
+        private void sendMail(int day, int year, int month) {
+            String mail = "mbfale@gmail.com";
+            String message = "You've booked an experience with PipeDreamer for the date "+day+"/"+month+"/"+year+"!";
+            String subject = "Booking";
+
+            JavaMailAPI javaMailAPI = new JavaMailAPI(getActivity(), mail, message, subject);
+            javaMailAPI.execute();
+
+
+        }
     }
 
     public void showDatePickerDialog(View v) {

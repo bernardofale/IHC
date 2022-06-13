@@ -64,9 +64,11 @@ public class ProfileActivity extends AppCompatActivity {
         lilText = (TextView) findViewById(R.id.textView35);
         if (num == 0){
             percentage.setText("0%");
+            bar.setProgress(1);
         }else{
             int perc = 100/num;
             percentage.setText(Integer.toString(perc)+"%");
+            bar.setProgress(perc);
             lilText.setText(perc+"% of your dreams are complete");
         }
     }
