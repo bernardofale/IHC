@@ -659,4 +659,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.823" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="74dp"
+        android:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/divider12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView62"
+        app:layout_constraintTop_toTopOf="@+id/textView31"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
